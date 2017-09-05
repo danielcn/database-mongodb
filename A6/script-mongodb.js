@@ -1,6 +1,6 @@
 /* FORA do Mongo DB */
 
-/* Start mongo  no docker*/
+/* Iniciando o Mongo no docker*/
 docker up 
 
 /* Entrando no banco via docker*/
@@ -35,6 +35,7 @@ show collections
 show tables
 db.getCollectionNames()
 
+/* Removendo base que não faz parte do trabalho*/
 db.pessoaJud.drop();
 
 
@@ -108,12 +109,40 @@ arrecadacao =
 
 }
 
+/* Inserindo um objeto de arrecadação previamente definido */
 db.Arrecadacao.insert(arrecadacao);
+arrecadacao = {
+ 	valor: 100.00,
+ 	statuscobranca: 'avista',
+ 	tipoTaxa: 'IPTU',	
+}
+
+/* Retornando todas as arrecadações */
 db.Arrecadacao.find();
+
+/* Removendo Arrecadação com um valor especificado */
 db.Arrecadacao.remove({arrecadacao, {id = '1'});
 
-
+/* Removendo Arrecadação com um valor especificado */
 db.Arrecadacao.remove(
    { TaxaLic: {emissaoAlvara: 700.000} },
    { collation: { locale: "fr", strength: 1 } }
 )
+
+/* Somar todos os valores de Arrecadação */
+
+
+/* Pegar a arrecadação de valor máximo */
+
+
+/* Pegar a arrecadação de valor minimo */
+
+
+
+
+/* 
+	Colocar o healine nas tabelas que não existem 
+	Fazer relacionamento através de IDs
+	Realizar as consultas
+	Raalizar 
+*/
