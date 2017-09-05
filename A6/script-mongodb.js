@@ -25,17 +25,17 @@ mongoimport -d atm -c TaxaLic --type csv --file importCSVArquivos/TaxaLic.csv --
 mongoimport -d atm -c ITBI --type csv --file importCSVArquivos/ITBI.csv --headerline
 mongoimport -d atm -c ISS --type csv --file importCSVArquivos/ISS.csv --headerline
 mongoimport -d atm -c Cobranca --type csv --file importCSVArquivos/Cobranca.csv --headerline	
+mongoimport -d atm -c PessoaJud --type csv --file importCSVArquivos/PessoaJud.csv --headerline	
 
 /* Entrando no Mongo novamente */
 mongo admin
 
-/* Cmongo*/
+/* Mostra todas as tabelas no banco de dados*/
 show collections
 show tables
 db.getCollectionNames()
 
-
-
+db.pessoaJud.drop();
 
 
 db.Arrecadacao.insert('');
